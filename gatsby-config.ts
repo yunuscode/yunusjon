@@ -1,3 +1,4 @@
+require("module-alias/register");
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
@@ -28,6 +29,15 @@ const config: GatsbyConfig = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+    {
+      resolve: `gatsby-plugin-alias-imports`,
+      options: {
+        alias: {
+          "@/*": "./src/*",
+        },
+        extensions: [],
+      },
     },
   ],
 };
